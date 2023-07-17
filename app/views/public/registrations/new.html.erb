@@ -10,11 +10,25 @@
       </tr>
 
       <tr>
-        <td> mail<br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </td>
+        <td>フリガナ</td>
+        <td>(セイ)<%= f.text_field :last_name_kana %></td>
+        <td>(メイ)<%= f.text_field :first_name_kana %></td>
       </tr>
 
+      <tr>
+        <td>メールアドレス</td>
+        <td><%= f.text_field :email %></td>
+      </tr>
+
+      <tr>
+        <td>郵便番号(ハイフンなし)</td>
+        <td><%= f.text_field :postal_code %></td>
+      </tr>
+
+      <tr>
+        <td>住所</td>
+        <td colspan="2"><%= f.text_field :address,class: "selector" %></td>
+      </tr>
 
 
       <%= f.text_field :last_name %>

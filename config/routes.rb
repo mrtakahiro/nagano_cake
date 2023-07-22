@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  namespace :public do
+  scope module: :public do
     get 'homes/top'
+    get 'customers/show'
+    get 'customers/edit'
+    get 'customers/check'
   end
   namespace :admin do
     get 'homes/top'

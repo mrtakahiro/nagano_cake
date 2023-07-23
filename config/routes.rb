@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
   scope module: :public do
     get 'homes/top'
-    get 'customers/show'
+    get 'customers/mypage' => 'customers#show'
     get 'customers/edit'
     get 'customers/check'
+    patch 'customers/update'
+     # 退会確認画面
+    get  '/customers/check' => 'customers#check'
+ # 論理削除用のルーティング
+    patch  '/customers/withdraw' => 'customers#withdraw'
   end
   namespace :admin do
     get 'homes/top'
+
   end
 
   get '/' => 'public/homes#about'

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :costomers
   scope module: :public do
+    root to: 'homes#top'
     get 'homes/top'
     get 'customers/mypage' => 'customers#show'
     get 'customers/edit'

@@ -1,3 +1,15 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
-<%# =link_to "退会"
+<p>ようこそ、ながのCAKEへ!<br>
+   このサイトは、ケーキ販売のECサイトになります。<br>
+   会員でない方も商品の閲覧はできますが、<br>
+   購入には会員登録が必要になります。
+</p>
+
+  <h3>新着商品</h3>
+    <%# @post_images.each do |post_image| この部分はスルーでも良い%>
+      <div>
+        <%#= image_tag post_image.get_image %>
+        <p>商品名：<%#= image_tag 'sample-author1.jpg' %></p>
+        <p>：<%#= post_image.shop_name %></p>
+        <p>全ての商品を見る：<%#= post_image.caption %></p>
+      </div>
+

@@ -46,27 +46,54 @@
                 <% end %>
               </li>
               <% elsif admin_signed_in? %>
-              <%#adminのヘッダー記載
-              <% else 顧客ページに合わせる%>
+              <li class="nav-item">
+                <%= link_to  admin_items_path, class: 'nav-link text-black' do %>
+                  <i class="fas fa-user-plus"></i>
+                  商品一覧
+                <% end %>
+              </li>
+
+              <li class="nav-item">
+                <%= link_to  admin_customers_path, class: 'nav-link text-black' do %>
+                  <i class="fas fa-user-plus"></i>
+                  会員一覧
+                <% end %>
+              </li>
+
+              <li class="nav-item">
+                <%= link_to  admin_path, class: 'nav-link text-black' do %>
+                  <i class="fas fa-user-plus"></i>
+                  注文履歴一覧
+                <% end %>
+              </li>
+
+              <li class="nav-item">
+                <%= link_to  destroy_admin_session_path, method: :delete, class: 'nav-link text-black' do %>
+                  <i class="fas fa-user-plus"></i>
+                  ログアウト
+                <% end %>
+              </li>
+
+              <% else %>
               <li class="nav-item">
                 <%= link_to  about_path, class: 'nav-link text-black' do %>
                   <i class="fas fa-home"></i>
                   About
                 <% end %>
               <li class="nav-item">
-                <%= link_to  admin_homes_top_path, class: 'nav-link text-black' do %>
+                <%= link_to  items_path, class: 'nav-link text-black' do %>
                   <i class="fas fa-link"></i>
                   商品一覧
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to  admin_homes_top_path, class: 'nav-link text-black' do %>
+                <%= link_to  new_customer_registration_path, class: 'nav-link text-black' do %>
                   <i class="fas fa-user-plus"></i>
                   新規登録
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to  admin_homes_top_path, class: 'nav-link text-black' do %>
+                <%= link_to  new_customer_session_path, class: 'nav-link text-black' do %>
                   <i class="fas fa-sign-in-alt"></i>
                   ログイン
                 <% end %>

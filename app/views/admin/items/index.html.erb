@@ -9,9 +9,9 @@
   <tbody>
     <% @items.each do |item| %>
     <tr>
-      <td><%= item.id %></td>
-      <td><%= name %></td>
-      <td><%= price %></td>
+      <td><%= @items.item.id %></td>
+      <td><%= @items.name %></td>
+      <td><%= @items.price %></td>
     </tr>
     <% end %>
   </tbody>

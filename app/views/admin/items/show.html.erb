@@ -1,0 +1,25 @@
+<h2>商品詳細</h2>
+
+<div>
+ <span>商品画像</span>
+ <%# byebug %>
+ <% if @item.item_image.attached? %>
+ <%= image_tag @item.item_image, size: "200x200" %>
+ <% end %>
+</div>
+
+  <div>
+   <span>商品名</span><%= @item.name %>
+  </div>
+
+  <div>
+   <span>商品説明</span><%= @item.introduction %>
+  </div>
+
+  <div>
+   <span>税込み価格(税抜価格)</span><%= @item.add_tax_price.to_s(:delimited) %>(<%= @item.price.to_s(:delimited) %>)円
+  </div>
+
+  <div>
+   <%= link_to "編集する", edit_admin_item_path %>
+  </div>

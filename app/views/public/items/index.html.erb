@@ -1,18 +1,9 @@
 <h3>商品一覧</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>商品ID</th> <th>商品名</th> <th>税抜き価格</th>
-    </tr>
-  </thead>
-  <tbody>
+  <div class="items d-flex flex-wrap" >
     <% @items.each do |item| %>
-    <tr>
-      <td><%= item.id %></td>
-      <td><%= name %></td>
-      <td><%= price %></td>
-    </tr>
+    <%= link_to root_path, class:"25%用のクラスbootstrap" do %>
+      <%# 画像 %><br><%= item.name %><br><%= item.price %>
     <% end %>
-  </tbody>
-</table>
+  <% end %>
+  </div>

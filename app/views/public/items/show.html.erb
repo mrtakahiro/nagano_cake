@@ -1,0 +1,23 @@
+<div>
+   <%= image_tag @item.item_image, size: "200x200" %>
+</div>
+
+
+<div>
+  <%= @item.name %>
+</div>
+
+<div>
+ <%= @item.introduction %>
+</div>
+
+<div>
+ <%= @item.add_tax_price.to_s(:delimited) %>(税込み)
+</div>
+
+<div class="items" d-flex>
+  <%= form_with model: Item.new do |f| %>
+    <%= f.select :個数選択, *[1..99] %>
+    <%= f.submit 'カートに入れる' %>
+  <% end %>
+</div>

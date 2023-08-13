@@ -2,7 +2,7 @@
 
   <div class="items d-flex flex-wrap" >
     <% @items.each do |item| %>
-    <%= link_to root_path, class:"25%用のクラスbootstrap" do %>
+    <%= link_to item_path(item), class:"商品詳細" do %>
       <%= image_tag item.item_image, size: "200x200" %><br><%= item.name %><br><%= item.price %>
     <% end %>
   <% end %>

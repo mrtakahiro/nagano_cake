@@ -1,2 +1,17 @@
-<h1>Public::CartItems#index</h1>
-<p>Find me in app/views/public/cart_items/index.html.erb</p>
+<h3>ショッピングカート</h3>
+
+<table border="1" style="border-collapse: collapse">
+  <tr>
+    <th>商品名</th> <th>単価(税込)</th> <th>数量</th> <th>小計</th> <th></th>
+  </tr>
+  <% @item.each do |item| %>
+  <tr>
+    <td><%= image_tag item.item_image, size: "50x50" %> <%= item.name %></td>
+    <td><%= item.add_tax_price.to_s(:delimited) %></td>
+    <%= form_with model: CartItem.new do |f| %>
+      <td><%= f.select :amount, *[1..99] %> <%= f.submit '変更' %></td>
+    <% end %>
+    <td><%= item.add_tax_price.to_s(:delimited) %>*<%= f.select :amount, *[1..99] %> <%= f.submit '変更' %></td>
+  </tr>
+  <% end %>
+</table>

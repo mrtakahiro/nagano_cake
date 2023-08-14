@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  namespace :public do
-    get 'cart_items/index' => 'cart_items#index'
-    patch 'cart_items/update'
-    delete 'cart_items/destory'
-    delete 'cart_items/destory_all'
-    post 'cart_items/create'
-  end
    # 顧客用
   # URL /customers/sign_in ...
   devise_for :customers,skip: [:passwords], controllers: {

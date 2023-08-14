@@ -28,26 +28,26 @@
                   マイページ
                 <% end %>
               <li class="nav-item">
-                <%= link_to  admin_homes_top_path, class: 'nav-link text-black' do %>
+                <%= link_to  items_path, class: 'nav-link text-black' do %>
                   <i class="fas fa-users"></i>
                   商品一覧
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to  admin_homes_top_path, class: 'nav-link text-black' do %>
+                <%= link_to  cart_items_path, class: 'nav-link text-black' do %>
                   <i class="fas fa-book-open"></i>
                   カート
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to  admin_homes_top_path, method: :delete, class: 'nav-link text-black' do %>
+                <%= link_to  root_path, method: :delete, class: 'nav-link text-black' do %>
                   <i class="fas fa-sign-out-alt"></i>
                   ログアウト
                 <% end %>
               </li>
               <% elsif admin_signed_in? %>
               <li class="nav-item">
-                <%= link_to  admin_items_path, class: 'nav-link text-black' do %>
+                <%= link_to admin_items_path, class: 'nav-link text-black' do %>
                   <i class="fas fa-user-plus"></i>
                   商品一覧
                 <% end %>

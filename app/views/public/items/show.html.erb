@@ -15,9 +15,10 @@
  <%= @item.add_tax_price.to_s(:delimited) %>(税込み)
 </div>
 
-<div class="items" d-flex>
-  <%= form_with model: Item.new do |f| %>
-    <%= f.select :個数選択, *[1..99] %>
+<div class= d-flex>
+  <%= form_with model: CartItem.new do |f| %>
+    <%= f.hidden_field :item_id, :value => @item.id %>
+    <%= f.select :amount, *[1..99] %>
     <%= f.submit 'カートに入れる' %>
   <% end %>
 </div>

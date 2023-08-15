@@ -2,9 +2,7 @@
 
 <div>
  <span>商品画像</span>
- <% if @item.item_image.attached? %>
- <%= image_tag @item.item_image, size: "200x200" %>
- <% end %>
+ <%= image_tag @item.get_image(200,200) %>
 </div>
 
   <div>

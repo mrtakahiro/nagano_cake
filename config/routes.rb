@@ -22,8 +22,8 @@ Rails.application.routes.draw do
     get  '/customers/check' => 'customers#check'
  # 論理削除用のルーティング
     patch  '/customers/withdraw' => 'customers#withdraw'
+    delete '/cart_items/destroy_all' => 'cart_items#destroy_all'
     resources :cart_items, only: [:index, :update, :destroy, :create]
-    delete '/cart_items/destroy_all' => 'cart_items#destory_all'
     resources :orders, only: [:new, :create, :index, :show]
     post '/orders/check' => 'orders#check'
     get '/orders/completion' => 'orders#completion'

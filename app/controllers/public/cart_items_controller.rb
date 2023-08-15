@@ -1,15 +1,18 @@
 class Public::CartItemsController < ApplicationController
   def index
-    @item = Item.all
+    @cart_items = current_customer.cart_items
   end
 
   def update
   end
 
-  def destory
+  def destroy
+    cart_items = CartItems.find(params[:id])
+    cart_items.destroy
   end
 
-  def destory_all
+  def destroy_all
+    current_customer.cart_items.destroy_all
   end
 
   def create

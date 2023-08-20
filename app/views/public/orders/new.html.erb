@@ -1,6 +1,6 @@
 <h3>注文情報入力</h3>
 <h3>支払方法</h3>
-<%= form_with do |f| %>
+<%= form_with model: Order.new do |f| %>
   <div>
     <%= f.radio_button :payment_method, "credit_card" %>
     <%= f.label :payment_method_credit_card, "クレジットカード" %>
@@ -8,5 +8,11 @@
   <div>
     <%= f.radio_button :payment_method, "transfer" %>
     <%= f.label :payment_method_transfer, "銀行振込" %>
+  </div>
+  <div>
+    <%= current_customer.postal_code %>
+    <%= current_customer.first_name %> <%= current_customer.last_name %>
+    <%= current_customer.address %>
+    <%= f.submit '確認画面へ進む' %>
   </div>
 <% end %>
